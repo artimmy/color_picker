@@ -15,22 +15,22 @@ class _MyHomePageState extends State<MyHomePage> {
   int colorValue = 0;
   String colorHexValue = 'HEX';
 
-  void changeColor(Color color) {
+  void _changeColor(Color color) {
     setState(() {
       pickerColor = color;
     });
-    getColorHexValue();
-    getColorValue();
+    _getColorHexValue();
+    _getColorValue();
   }
 
-  void getColorHexValue() {
+  void _getColorHexValue() {
     setState(() {
       colorHexValue =
           pickerColor.value.toRadixString(16).substring(2).toUpperCase();
     });
   }
 
-  void getColorValue() {
+  void _getColorValue() {
     setState(() {
       colorValue = pickerColor.value;
     });
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               ColorPicker(
                 pickerColor: pickerColor,
-                onColorChanged: changeColor,
+                onColorChanged: _changeColor,
                 labelTypes: const [
                   ColorLabelType.rgb,
                   ColorLabelType.hsv,
@@ -61,12 +61,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const SizedBox(height: 20),
               // ElevatedButton(
-              //   onPressed: getColorValue,
+              //   onPressed: _getColorValue,
               //   child: const Text('Get Color'),
               // ),
               // const SizedBox(height: 20),
               // ElevatedButton(
-              //   onPressed: getColorHexValue,
+              //   onPressed: _getColorHexValue,
               //   child: const Text('Get Hexadecimal Color'),
               // ),
               const SizedBox(height: 20),
