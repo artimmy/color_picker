@@ -44,48 +44,50 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text('Color Picker'),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ColorPicker(
-                pickerColor: pickerColor,
-                onColorChanged: changeColor,
-                labelTypes: const [
-                  ColorLabelType.rgb,
-                  ColorLabelType.hsv,
-                  ColorLabelType.hsl
-                ],
-                pickerAreaHeightPercent: 0.8,
-                colorPickerWidth: 500,
-              ),
-              const SizedBox(height: 20),
-              // ElevatedButton(
-              //   onPressed: getColorValue,
-              //   child: const Text('Get Color'),
-              // ),
-              // const SizedBox(height: 20),
-              // ElevatedButton(
-              //   onPressed: getColorHexValue,
-              //   child: const Text('Get Hexadecimal Color'),
-              // ),
-              const SizedBox(height: 20),
-              SelectableText(
-                colorValue.toString(),
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ColorPicker(
+                  pickerColor: pickerColor,
+                  onColorChanged: changeColor,
+                  labelTypes: const [
+                    ColorLabelType.rgb,
+                    ColorLabelType.hsv,
+                    ColorLabelType.hsl
+                  ],
+                  pickerAreaHeightPercent: 0.8,
+                  colorPickerWidth: 500,
                 ),
-              ),
-              const SizedBox(height: 20),
-              SelectableText(
-                colorHexValue,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                const SizedBox(height: 20),
+                // ElevatedButton(
+                //   onPressed: getColorValue,
+                //   child: const Text('Get Color'),
+                // ),
+                // const SizedBox(height: 20),
+                // ElevatedButton(
+                //   onPressed: getColorHexValue,
+                //   child: const Text('Get Hexadecimal Color'),
+                // ),
+                const SizedBox(height: 20),
+                SelectableText(
+                  colorValue.toString(),
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 20),
+                SelectableText(
+                  colorHexValue,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
